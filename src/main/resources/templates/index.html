@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <!-- END GLOBAL MANDATORY STYLES -->
+
+    <!-- BEGIN THEME STYLES -->
+    <link href="assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
+    <!-- END THEME STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLE -->
+    <link href="assets/css/page/index.css" rel="stylesheet" type="text/css"/>
+    <!-- END PAGE LEVEL STYLE -->
+    <!--[if lt IE 9]>
+    <script src="assets/plugins/modernizr-2.6.2.min.js"></script>
+    <script src="assets/plugins/respond.min.js"></script>
+    <script src="assets/plugins/excanvas.min.js"></script>
+    <![endif]-->
+</head>
+<body class="index">
+<header>
+    <!--[if lte IE 9]>
+    <div id="warning_info" class="text-warning fade in mb_0">
+        <button data-dismiss="alert" class="close_btn" type="button">×</button>
+        <strong>您正在使用低版本浏览器，</strong> 在本页面的显示效果可能有差异。
+        建议您升级到
+        <a href="http://www.google.cn/intl/zh-CN/chrome/" target="_blank">Chrome</a>
+        或以下浏览器：
+        <a href="www.mozilla.org/en-US/firefox/‎" target="_blank">Firefox</a> /
+        <a href="http://www.apple.com.cn/safari/" target="_blank">Safari</a> /
+        <a href="http://www.opera.com/" target="_blank">Opera</a> /
+        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank">
+            Internet Explorer 10</a>
+    </div>
+    <![endif]-->
+    <div class="header navbar navbar-default navbar-static-top no-scrolling-fixed">
+        <!-- BEGIN TOP NAVIGATION BAR -->
+        <div class="header-inner">
+            <!-- BEGIN LOGO -->
+            <a class="navbar-brand">
+                <img src="assets/img/logo.png" alt="logo" width="100"/>
+            </a>
+
+            <h1>
+                <b>企业档案管理系统</b>
+            </h1>
+            <!-- END LOGO -->
+
+            <!-- BEGIN TOP NAVIGATION MENU -->
+            <ul class="nav navbar-nav pull-right">
+
+                <li>
+                    当前身份：<label th:text="${session.username}"></label>
+                </li>
+                <li>
+                    <i class="fa fa-user"></i>欢迎您，<label th:text="${session.rolename}"></label>
+                </li>
+                <li>
+                    <a href="/logout">
+                        <i class="fa fa-arrow-circle-right"></i>安全退出
+                    </a>
+                </li>
+            </ul>
+            <!-- END TOP NAVIGATION MENU -->
+        </div>
+        <!-- END TOP NAVIGATION BAR -->
+    </div>
+</header>
+<!-- BEGIN TOP NAVIGATION MENU -->
+<nav id="top-nav">
+    <div class="navbar-collapse collapse">
+
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="/index">首页</a>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                   data-close-others="false">
+                    系统管理
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/0">消息管理</a></li>
+                    <li><a href="/1">系统配置</a></li>
+	    			<li><a href="/2">数据字典</a></li>
+	    			<li><a href="/3">角色管理</a></li>
+  	    			<li><a href="/4">部门管理</a></li>
+                    <li><a href="/5">员工管理</a></li>
+	    			<li><a href="/6">日志管理</a></li>
+                </ul>
+            </li>
+            
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                   data-close-others="false">
+                    档案管理
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/7">存档点管理</a></li>
+                    <li><a href="/8">档案分类管理</a></li>
+                    <li><a href="/9">档案管理</a></li>
+                    <li><a href="/10">档案借阅管理</a></li>
+                    <li><a href="/11">档案归还管理</a></li>
+                    <li><a href="/12">档案归还查询</a></li>
+                    <li><a href="/13">档案导出</a></li>
+                    <li><a href="/14">扫描件上传</a></li>
+                    <li><a href="/15">档案到期查询</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                   data-close-others="false" href="#">
+                    档案鉴定
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/16">档案销毁登记</a></li>
+                    <li><a href="/17">档案销毁查询</a></li>
+                    <li><a href="/18">损坏丢失登记</a></li>
+                    <li><a href="/19">损坏丢失查询</a></li>
+                    <li><a href="/20">丢失找回</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                   data-close-others="false">
+                    数据维护
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/21">数据备份</a></li>
+                    <li><a href="/22">数据恢复</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+<!-- END TOP NAVIGATION MENU -->
+<div class="page-container">
+<!--BEGIN LEFT MENU-->
+<div class="page-sidebar-wrapper">
+    <div class="page-sidebar navbar-collapse collapse">
+        <ul class="page-sidebar-menu">
+            <li class="navbar-header">常用功能</li>
+            <li class="start"><a href="#"><i class="fa fa-comments-o"></i>在线沟通</a></li>
+            <li><a><i class="fa fa-bullhorn"></i>公告</a></li>
+            <li><a><i class="fa fa-envelope-o"></i>站内信</a></li>
+            <li><a><i class="fa fa-lightbulb-o"></i>常见问题</a></li>
+            <li><a><i class="fa fa-wrench"></i>帮助</a></li>
+        </ul>
+    </div>
+</div>
+<!--END LEFT MENU -->
+
+
+
+<!-- BEGIN CONTENT -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="row">
+            <div class="col-md-8">
+            
+            <h2><p th:text="${needrole}" style="color:red;"></p></h2>
+            <h2><p th:text="${message}" style="color:brown;"></p></h2>
+            
+                <!-- 日程开始 -->
+                <div class="tabbable tabbable-custom tabbable-full-width">
+
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#tab_1_1" data-toggle="tab">今天</a>
+                        </li>
+                        <li class="">
+                            <a href="#tab_1_2" data-toggle="tab">明天</a>
+                        </li>
+                        <li class="">
+                            <a href="#tab_1_3" data-toggle="tab">后天</a>
+                        </li>
+                        <li class="">
+                            <a href="#tab_1_4" data-toggle="tab">1号</a>
+                        </li>
+                        <li class="">
+                            <a href="#tab_1_5" data-toggle="tab">2号</a>
+                        </li>
+                        <li class="pull-right">
+                            <a href="#"><i class="fa fa-calendar"></i></a>
+                        </li>
+                        <li class="pull-right">
+                            <a href="#"><i class="fa fa-plus"></i></a>
+
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab_1_1">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <p class="f_line">五月</p>
+
+                                    <p class="s_line">29</p>
+
+                                    <p class="t_line">星期四</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <p class="f_line"><i class="fa fa-bell-o"></i></p>
+
+                                    <p class="s_time">10:00 - 18:00</p>
+
+                                    <p class="t_line">督导小军</p>
+
+                                    <p class="t_line">短信提醒</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <p class="f_line"><i class="fa fa-plus-square-o"></i></p>
+
+                                    <p class="s_time">新增提醒</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <p class="f_line"><i class="fa fa-plus-square-o"></i></p>
+
+                                    <p class="s_time">新增提醒</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab_1_2">
+                            tab2
+                        </div>
+                        <div class="tab-pane" id="tab_1_3">
+                            tab3
+                        </div>
+                        <div class="tab-pane" id="tab_1_4">
+                            tab4
+                        </div>
+                        <div class="tab-pane" id="tab_1_5">
+                            tab5
+                        </div>
+                    </div>
+                </div>
+                <!-- 日程结束 -->
+                <!-- 公告开始 -->
+                <div class="" id="news">
+                    <div class="title">
+                        <h4>公告
+                            <div class="pull-right">
+                                <i class="fa fa-table"></i> <a href="#">
+                                <small>查看全部</small>
+                            </a>
+                            </div>
+                        </h4>
+                        <div class="clearfix"></div>
+                    </div>
+                    <ol class="news-list">
+                        <li>
+
+                            <span>1. 关于针对2013届社会工作专业学生开展春季实习的通知</span>
+                            <span class="pull-right">2014-02-28</span>
+
+                        </li>
+                        <li>
+                            <span>2. 我校新开放“上海公益社工事务所”为实习点的通知</span>
+                            <span class="pull-right">2014-02-28</span>
+                        </li>
+                        <li>
+                            <span>3. 我系小军同学被评为上海市优秀社工实习生</span>
+                            <span class="pull-right"> 2014-02-28</span>
+                        </li>
+                        <li>
+                            <span>4. 针对非本地专业实习同学管理办法</span>
+                            <span class="pull-right"> 2014-02-28</span>
+
+                        </li>
+                        <li>
+                            <span> 5. 关于针对2013届社会工作专业学生开展春季实习的通知</span>
+                            <span class="pull-right"> 2014-02-28</span>
+                        </li>
+                        <li>
+                            <span>6. 我校新开放“上海公益社工事务所”为实习点的通知</span>
+                            <span class="pull-right">2014-02-28</span>
+                        </li>
+                        <li>
+                            <span>7. 我系小军同学被评为上海市优秀社工实习生</span>
+                            <span class="pull-right">2014-02-28</span>
+                        </li>
+                        <li>
+                            <span>8. 针对非本地专业实习同学管理办法</span>
+                            <span class="pull-right">2014-02-28</span>
+                        </li>
+                    </ol>
+                </div>
+                <!-- 公告结束 -->
+            </div>
+            <!-- 右侧栏 -->
+            <div class="col-md-4" id="profile">
+                <div class="row">
+                    <div class="col-md-5" style="padding-left: 0;">
+                        <img src="assets/img/touxiang.png" width="120" height="120" alt="用户头像"/>
+                    </div>
+                    <div class="col-md-7">
+                        <p class="p_user_name">invyasha</p>
+
+                        <p class="p_user_link"><a href="#">编辑资料</a></p>
+                        <hr/>
+                        <div class="dash-icon">
+                            <div class="col-md-4"><i class="fa fa-envelope-o"></i></div>
+                            <div class="col-md-4"><i class="fa fa-comment-o"></i></div>
+                            <div class="col-md-4"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- 审批开始 -->
+                    <div id="approval">
+                        <!--<h4>在线审批</h4>-->
+                        <div class="title">
+                            <span>在线审批-学生作业审批</span>
+
+                        <span class="pull-right">
+                            <i class="fa fa-table"></i> <a href="#">查看全部</a></span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <ul class="news-list">
+                            <li>
+                                <a href="#"><span>实习周记5.1--赵（5.1）</span></a>
+                                <span class="pull-right">未查看</span>
+                            </li>
+                            <li>
+                                <a href="#"><span>实习周记5.1--吴（5.1）</span></a>
+                                <span class="pull-right">已查看</span>
+                            </li>
+                            <li>
+                                <a href="#"><span>社区（机构）总结评估报告--周（5.1）</span></a>
+                                <span class="pull-right">已查看</span>
+                            </li>
+                            <li>
+                                <a href="#"><span>案接案摘要报告--李（5.1）</span></a>
+                                <span class="pull-right">已查看</span>
+                            </li>
+                            <li>
+                                <a href="#"><span>个案工作干预计划（5.1）</span></a>
+                                <span class="pull-right">已查看</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 审批结束 -->
+                </div>
+
+            </div>
+            <!-- 右侧栏结束 -->
+        </div>
+    </div>
+</div>
+<!-- END CONTENT -->
+</div>
+<!-- BEGIN FOOTER -->
+<div class="footer">
+    <a href="#">联系我们</a> | <a href="#">合作机构</a>
+</div>
+<!-- END FOOTER -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<script src="assets/plugins/pace.min.js"></script>
+<script src="assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js"
+        type="text/javascript"></script>
+<script src="assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+</body>
+</html>

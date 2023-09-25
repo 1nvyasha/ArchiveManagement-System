@@ -1,0 +1,21 @@
+#mybatis相关信息
+spring:
+  jackson:
+  date-format: yyyy-MM-dd
+  time-zone: GMT+8
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dangan_management
+    username: root
+    password: a547896321
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/dangan_management
+      username: root
+      password: a547896321
+#tomcat服务端口
+server:
+  port: 80
+  servlet:
+    context-path: /
+

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <title>档案填写</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <!-- END GLOBAL MANDATORY STYLES -->
+
+    <!-- BEGIN THEME STYLES -->
+    <link href="assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
+    <!-- END THEME STYLES -->
+    
+    <!--[if lt IE 9]>
+    <script src="assets/plugins/modernizr-2.6.2.min.js"></script>
+    <script src="assets/plugins/respond.min.js"></script>
+    <script src="assets/plugins/excanvas.min.js"></script>
+    <![endif]-->
+    
+</head>
+<body>
+<header>
+<div class="header navbar navbar-default navbar-static-top no-scrolling-fixed">
+    <!-- BEGIN TOP NAVIGATION BAR -->
+    <div class="header-inner">
+        <!-- BEGIN LOGO -->
+        <a class="navbar-brand" href="#">
+            <img src="assets/img/logo.png" alt="logo" width="100"/>
+        </a>
+
+            <h1>
+                <b>企业档案管理系统</b>
+            </h1>
+        <!-- END LOGO -->
+
+            <!-- BEGIN TOP NAVIGATION MENU -->
+            <ul class="nav navbar-nav pull-right">
+
+                <li>
+                    当前身份：<label th:text="${session.username}"></label>
+                </li>
+                <li>
+                    <i class="fa fa-user"></i>欢迎您，<label th:text="${session.rolename}"></label>
+                </li>
+                <li>
+                    <a href="/logout">
+                        <i class="fa fa-arrow-circle-right"></i>安全退出
+                    </a>
+                </li>
+            </ul>
+            <!-- END TOP NAVIGATION MENU -->
+        </div>
+        <!-- END TOP NAVIGATION BAR -->
+    </div>
+</header>
+<!-- BEGIN TOP NAVIGATION MENU -->
+<nav id="top-nav">
+    <div class="navbar-collapse collapse">
+
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="/index">首页</a>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                   data-close-others="false">
+                    系统管理
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/0">消息管理</a></li>
+                    <li><a href="/1">系统配置</a></li>
+	    			<li><a href="/2">数据字典</a></li>
+	    			<li><a href="/3">角色管理</a></li>
+  	    			<li><a href="/4">部门管理</a></li>
+                    <li><a href="/5">员工管理</a></li>
+	    			<li><a href="/6">日志管理</a></li>
+                </ul>
+            </li>
+            
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                   data-close-others="false">
+                    档案管理
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/7">存档点管理</a></li>
+                    <li><a href="/8">档案分类管理</a></li>
+                    <li><a href="/9">档案管理</a></li>
+                    <li><a href="/10">档案借阅管理</a></li>
+                    <li><a href="/11">档案归还管理</a></li>
+                    <li><a href="/12">档案归还查询</a></li>
+                    <li><a href="/13">档案导出</a></li>
+                    <li><a href="/14">扫描件上传</a></li>
+                    <li><a href="/15">档案到期查询</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                   data-close-others="false" href="#">
+                    档案鉴定
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/16">档案销毁登记</a></li>
+                    <li><a href="/17">档案销毁查询</a></li>
+                    <li><a href="/18">损坏丢失登记</a></li>
+                    <li><a href="/19">损坏丢失查询</a></li>
+                    <li><a href="/20">丢失找回</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                   data-close-others="false">
+                    数据维护
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/21">数据备份</a></li>
+                    <li><a href="/22">数据恢复</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+<!-- END TOP NAVIGATION MENU -->
+<div class="page-container">
+<!--BEGIN LEFT MENU-->
+<div class="page-sidebar-wrapper">
+    <div class="page-sidebar navbar-collapse collapse">
+        <ul class="page-sidebar-menu">
+            <li class="navbar-header">常用功能</li>
+            <li class="start"><a href="#"><i class="fa fa-comments-o"></i>在线沟通</a></li>
+            <li><a><i class="fa fa-bullhorn"></i>公告</a></li>
+            <li><a><i class="fa fa-envelope-o"></i>站内信</a></li>
+            <li><a><i class="fa fa-lightbulb-o"></i>常见问题</a></li>
+            <li><a><i class="fa fa-wrench"></i>帮助</a></li>
+        </ul>
+    </div>
+</div>
+<!--END LEFT MENU -->
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+        <div class="page-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="page-breadcrumb breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a>档案管理</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="/9">档案管理</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="/todanganGuanliZengjia">档案增加</a>
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <form class="form-horizontal" action=/danganGuanliZengjia method="post">
+                <div class="row">
+		<!--  
+                    <div class="col-md-2 text-center">
+                        <img src="assets/img/touxiang.png" width="120" alt="用户头像">
+
+                        <h4><a href="#">修改头像</a></h4>
+                    </div>
+        -->
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">档案所属类型:</label>
+
+                            <div class="col-md-8">
+<!--<input class="form-control" type="text" placeholder="hao123" name="ArchiveTypeId">-->
+                                <select name="ArchiveTypeId">
+                                	<option value='CA'>公司档案</option>
+                                	<option value='CK'>员工档案</option>
+                                	<option value='DEPT'>部门档案</option>
+                                	<option value='TEST'>测试档案</option>
+                            	</select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">档案存档点:</label>
+
+                            <div class="col-md-8">
+ <!--  <input class="form-control" type="password">-->
+                                <select name="SaveId">
+                                	<option value=0>测试存档点</option>
+                                	<option value=1>测试存档点1</option>
+                                	<option value=2>测试存档点2</option>
+                                	<option value=3>测试存档点3</option>
+                            	</select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">文件编号:</label>
+
+                            <div class="col-md-8">
+                            	<input class="form-control" type="text" name="FileCode"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">档案标题:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" name="Title"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">建档用户:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" name="Creater"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">建档日期:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="date" th:max="${currentDate}" name="CreateTime"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">修改用户:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" name="LastModiUser"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">修改日期:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="date" th:value="${currentDate}" name="LastModiTime"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">安全级别:</label>
+
+                            <div class="col-md-8">
+                                <select name="LevelId">
+                                	<option value=0>一级</option>
+									<option value=1>二级</option>
+									<option value=2>三级</option>
+								</select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">过期时间:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="date" th:min="${currentDate}" name="EndTime"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">过期是否提前通知:</label>
+
+                            <div class="col-md-8">
+                                <select name="EndIsAlert">
+                                	<option value=0>否</option>
+									<option value=1>是</option>
+								</select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">提前通知的天数:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" name="EndBeforeDay"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">内容简介:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" name="Remark"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">是否常用:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" name="IsOften"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">来文部门:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" name="FromDept"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">发文单位:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" name="FromUnit"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">发文人:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" name="FromUser"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">批准时间:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="date" th:max="${currentDate}" name="ImpactTime"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">鉴定时间:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="date" th:max="${currentDate}" name="UseTime"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">产品批号:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" name="ProductCode"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">原料批号:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" name="StuffCode"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">数量:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" name="Number"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">页数:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" name="PageCount"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">专利号:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" name="PatentCode"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">年检负责人:</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" type="text" name="CheckUser"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row full-width">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">档案内容:</label>
+
+                            <div class="col-md-7">
+                                <textarea class="form-control" cols="30" rows="10" name="Content"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--  
+                    <div class="col-md-7 col-md-offset-5 margin-top-10">
+                        <a href="#" class="btn default margin-right-10">取消</a>
+                        <a href="#" class="btn blue">保存修改</a>
+                    </div>
+                    -->
+                </div>
+                <button class="submit">确认</button>
+            </form>
+            <form form action="/9" method="post"> 
+				<button class="submit">返回</button>
+			</form>
+        </div>
+    </div>
+    <!-- END CONTENT -->
+</div>
+
+<!-- BEGIN FOOTER -->
+<div class="footer">
+    联系我们 | 合作机构
+</div>
+<!-- END FOOTER -->
+
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+
+<script src="assets/plugins/pace.min.js"></script>
+<script src="assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js"
+        type="text/javascript"></script>
+<script src="assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+
+hr.hr_line{
+    margin: 8px 0 20px;
+}
+
+.col-md-12 .table {
+    text-align: center;
+}
+
+.col-md-12 .table thead tr th{
+    text-align:  center;
+}
+
+a.role_tab{
+    color: #555;
+    background-color: #f6f6f6;
+    border-top: 2px solid #368ee0;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+

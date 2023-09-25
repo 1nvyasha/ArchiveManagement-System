@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <title>存档点管理修改</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <!-- END GLOBAL MANDATORY STYLES -->
+
+    <!-- BEGIN THEME STYLES -->
+    <link href="assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
+    <!-- END THEME STYLES -->
+
+    <!--[if lt IE 9]>
+    <script src="assets/plugins/modernizr-2.6.2.min.js"></script>
+    <script src="assets/plugins/respond.min.js"></script>
+    <script src="assets/plugins/excanvas.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<header>
+    <!--[if lte IE 9]>
+    <div id="warning_info" class="text-warning fade in mb_0">
+        <button data-dismiss="alert" class="close_btn" type="button">×</button>
+        <strong>您正在使用低版本浏览器，</strong> 在本页面的显示效果可能有差异。
+        建议您升级到
+        <a href="http://www.google.cn/intl/zh-CN/chrome/" target="_blank">Chrome</a>
+        或以下浏览器：
+        <a href="www.mozilla.org/en-US/firefox/‎" target="_blank">Firefox</a> /
+        <a href="http://www.apple.com.cn/safari/" target="_blank">Safari</a> /
+        <a href="http://www.opera.com/" target="_blank">Opera</a> /
+        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank">
+            Internet Explorer 10</a>
+    </div>
+    <![endif]-->
+    <div class="header navbar navbar-default navbar-static-top no-scrolling-fixed">
+        <!-- BEGIN TOP NAVIGATION BAR -->
+        <div class="header-inner">
+            <!-- BEGIN LOGO -->
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logo.png" alt="logo" width="100"/>
+            </a>
+
+            <h1>
+                <b>企业档案管理系统</b>
+            </h1>
+            <!-- END LOGO -->
+
+            <!-- BEGIN TOP NAVIGATION MENU -->
+            <ul class="nav navbar-nav pull-right">
+
+                <li>
+                    当前身份：<label th:text="${session.username}"></label>
+                </li>
+                <li>
+                    <i class="fa fa-user"></i>欢迎您，<label th:text="${session.rolename}"></label>
+                </li>
+                <li>
+                    <a href="/logout">
+                        <i class="fa fa-arrow-circle-right"></i>安全退出
+                    </a>
+                </li>
+            </ul>
+            <!-- END TOP NAVIGATION MENU -->
+        </div>
+        <!-- END TOP NAVIGATION BAR -->
+    </div>
+</header>
+<!-- BEGIN TOP NAVIGATION MENU -->
+<nav id="top-nav">
+    <div class="navbar-collapse collapse">
+
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="/index">首页</a>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                   data-close-others="false">
+                    系统管理
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/0">消息管理</a></li>
+                    <li><a href="/1">系统配置</a></li>
+	    			<li><a href="/2">数据字典</a></li>
+	    			<li><a href="/3">角色管理</a></li>
+  	    			<li><a href="/4">部门管理</a></li>
+                    <li><a href="/5">员工管理</a></li>
+	    			<li><a href="/6">日志管理</a></li>
+                </ul>
+            </li>
+            
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                   data-close-others="false">
+                    档案管理
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/7">存档点管理</a></li>
+                    <li><a href="/8">档案分类管理</a></li>
+                    <li><a href="/9">档案管理</a></li>
+                    <li><a href="/10">档案借阅管理</a></li>
+                    <li><a href="/11">档案归还管理</a></li>
+                    <li><a href="/12">档案归还查询</a></li>
+                    <li><a href="/13">档案导出</a></li>
+                    <li><a href="/14">扫描件上传</a></li>
+                    <li><a href="/15">档案到期查询</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                   data-close-others="false" href="#">
+                    档案鉴定
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/16">档案销毁登记</a></li>
+                    <li><a href="/17">档案销毁查询</a></li>
+                    <li><a href="/18">损坏丢失登记</a></li>
+                    <li><a href="/19">损坏丢失查询</a></li>
+                    <li><a href="/20">丢失找回</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                   data-close-others="false">
+                    数据维护
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/21">数据备份</a></li>
+                    <li><a href="/22">数据恢复</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+<!-- END TOP NAVIGATION MENU -->
+<div class="page-container">
+<!--BEGIN LEFT MENU-->
+<div class="page-sidebar-wrapper">
+    <div class="page-sidebar navbar-collapse collapse">
+        <ul class="page-sidebar-menu">
+            <li class="navbar-header">常用功能</li>
+            <li class="start"><a href="#"><i class="fa fa-comments-o"></i>在线沟通</a></li>
+            <li><a><i class="fa fa-bullhorn"></i>公告</a></li>
+            <li><a><i class="fa fa-envelope-o"></i>站内信</a></li>
+            <li><a><i class="fa fa-lightbulb-o"></i>常见问题</a></li>
+            <li><a><i class="fa fa-wrench"></i>帮助</a></li>
+        </ul>
+    </div>
+</div>
+<!--END LEFT MENU -->
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+        <div class="page-content">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <ul class="page-breadcrumb breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a>档案管理</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="/7">存档点管理</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="/tocundangdianGuanliXiugai">存档点管理修改</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+<form action="/cundangdianGuanliXiugai" method="post" th:object="${save}">
+<div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr class="tr_b">
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>存档点id</td>
+                            <td>
+                                <input th:field="*{SaveId}" name="SaveId"></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>存档点名称</td>
+                            <td>
+                                <input th:field="*{SaveName}" name="SaveName"></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>存档地址</td>
+                            <td>
+                               <input th:field="*{SaveAddress}" name="SaveAddress"></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>联系人</td>
+                            <td>
+                                <input th:field="*{Linker}" name="Linker"></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>联系电话</td>
+                            <td>
+                                <input th:field="*{TelePhone}" name="TelePhone"></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>传真</td>
+                            <td>
+                                <input th:field="*{Fax}" name="Fax"></input>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>备注</td>
+                            <td>
+                                <input th:field="*{Remark}" name="Remark"></input>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <button class="submit">确认</button>
+                </div>
+            </div>
+</form>
+
+<form form action="/7" method="post"> 
+<button class="submit">返回</button>
+</form>
+
+                </div>
+            </div>
+
+    <!-- END CONTENT -->
+</div>
+
+<!-- BEGIN FOOTER -->
+<div class="footer">
+    <a href="#">联系我们</a> | <a href="#">合作机构</a>
+</div>
+<!-- END FOOTER -->
+
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+
+<script src="assets/plugins/pace.min.js"></script>
+<script src="assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js"
+        type="text/javascript"></script>
+<script src="assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+</body>
+</html>

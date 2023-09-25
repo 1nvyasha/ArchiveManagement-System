@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <title>数据字典</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <!-- END GLOBAL MANDATORY STYLES -->
+
+    <!-- BEGIN THEME STYLES -->
+    <link href="assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"/>
+    <!-- END THEME STYLES -->
+    <link href="assets/css/page/chengji-chakan.css" rel="stylesheet" type="text/css"/>
+    <!--[if lt IE 9]>
+    <script src="assets/plugins/modernizr-2.6.2.min.js"></script>
+    <script src="assets/plugins/respond.min.js"></script>
+    <script src="assets/plugins/excanvas.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="performance">
+<header>
+    <!--[if lte IE 9]>
+    <div id="warning_info" class="text-warning fade in mb_0">
+        <button data-dismiss="alert" class="close_btn" type="button">×</button>
+        <strong>您正在使用低版本浏览器，</strong> 在本页面的显示效果可能有差异。
+        建议您升级到
+        <a href="http://www.google.cn/intl/zh-CN/chrome/" target="_blank">Chrome</a>
+        或以下浏览器：
+        <a href="www.mozilla.org/en-US/firefox/‎" target="_blank">Firefox</a> /
+        <a href="http://www.apple.com.cn/safari/" target="_blank">Safari</a> /
+        <a href="http://www.opera.com/" target="_blank">Opera</a> /
+        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank">
+            Internet Explorer 10</a>
+    </div>
+    <![endif]-->
+    <div class="header navbar navbar-default navbar-static-top no-scrolling-fixed">
+        <!-- BEGIN TOP NAVIGATION BAR -->
+        <div class="header-inner">
+            <!-- BEGIN LOGO -->
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logo.png" alt="logo" width="100"/>
+            </a>
+
+            <h1>
+                <b>企业档案管理系统</b>
+            </h1>
+            <!-- END LOGO -->
+
+            <!-- BEGIN TOP NAVIGATION MENU -->
+            <ul class="nav navbar-nav pull-right">
+
+                <li>
+                    当前身份：<label th:text="${session.username}"></label>
+                </li>
+                <li>
+                    <i class="fa fa-user"></i>欢迎您，<label th:text="${session.rolename}"></label>
+                </li>
+                <li>
+                    <a href="/logout">
+                        <i class="fa fa-arrow-circle-right"></i>安全退出
+                    </a>
+                </li>
+            </ul>
+            <!-- END TOP NAVIGATION MENU -->
+        </div>
+        <!-- END TOP NAVIGATION BAR -->
+    </div>
+</header>
+<!-- BEGIN TOP NAVIGATION MENU -->
+<nav id="top-nav">
+    <div class="navbar-collapse collapse">
+
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="/index">首页</a>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                   data-close-others="false">
+                    系统管理
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/0">消息管理</a></li>
+                    <li><a href="/1">系统配置</a></li>
+	    			<li><a href="/2">数据字典</a></li>
+	    			<li><a href="/3">角色管理</a></li>
+  	    			<li><a href="/4">部门管理</a></li>
+                    <li><a href="/5">员工管理</a></li>
+	    			<li><a href="/6">日志管理</a></li>
+                </ul>
+            </li>
+            
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                   data-close-others="false">
+                    档案管理
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/7">存档点管理</a></li>
+                    <li><a href="/8">档案分类管理</a></li>
+                    <li><a href="/9">档案管理</a></li>
+                    <li><a href="/10">档案借阅管理</a></li>
+                    <li><a href="/11">档案归还管理</a></li>
+                    <li><a href="/12">档案归还查询</a></li>
+                    <li><a href="/13">档案导出</a></li>
+                    <li><a href="/14">扫描件上传</a></li>
+                    <li><a href="/15">档案到期查询</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                   data-close-others="false" href="#">
+                    档案鉴定
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/16">档案销毁登记</a></li>
+                    <li><a href="/17">档案销毁查询</a></li>
+                    <li><a href="/18">损坏丢失登记</a></li>
+                    <li><a href="/19">损坏丢失查询</a></li>
+                    <li><a href="/20">丢失找回</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                   data-close-others="false">
+                    数据维护
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/21">数据备份</a></li>
+                    <li><a href="/22">数据恢复</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+<!-- END TOP NAVIGATION MENU -->
+<div class="page-container">
+<!--BEGIN LEFT MENU-->
+<div class="page-sidebar-wrapper">
+    <div class="page-sidebar navbar-collapse collapse">
+        <ul class="page-sidebar-menu">
+            <li class="navbar-header">常用功能</li>
+            <li class="start"><a href="#"><i class="fa fa-comments-o"></i>在线沟通</a></li>
+            <li><a><i class="fa fa-bullhorn"></i>公告</a></li>
+            <li><a><i class="fa fa-envelope-o"></i>站内信</a></li>
+            <li><a><i class="fa fa-lightbulb-o"></i>常见问题</a></li>
+            <li><a><i class="fa fa-wrench"></i>帮助</a></li>
+        </ul>
+    </div>
+</div>
+<!--END LEFT MENU -->
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+        <div class="page-content">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <ul class="page-breadcrumb breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="#">系统管理</a>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <a href="#">数据字典</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row bottom_10">
+                <div class="col-md-10 t_center"><h3>数据字典</h3></div>
+                
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr class="tr_b">
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <thead>
+                        <tr class="tr_b">
+                            <th>序号</th>
+                            <th>名称</th>
+                            <th>参数配置</th>
+	            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                档案安全级别
+                            </td>
+                            <td>
+                            <select name="">
+                                <option>一级</option>
+                                <option>二级</option>
+                                <option>三级</option>
+                            </select>
+                            </td>
+                            <td>
+                                <button class="submit">修改</button><button class="submit">添加</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                档案附件类型
+                            </td>
+                            <td>
+                            <select name="">
+                                <option>影音资料</option>
+                                <option>扫描图片</option>
+                                <option>压缩文件</option>
+                                <option>办公文档</option>
+                            </select>
+                            </td>
+                            <td>
+                                <button class="submit">修改</button><button class="submit">添加</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>
+                                员工职务类型
+                            </td>
+                            <td>
+                            <select name="">
+                                <option>技术支持</option>
+                                <option>职员</option>
+                                <option>项目经理</option>
+                                <option>总监</option>
+                                <option>副总经理</option>
+                                <option>总经理</option>
+                            </select>
+                            </td>
+                            <td>
+                                <button class="submit">修改</button><button class="submit">添加</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>
+                                员工学历
+                            </td>
+                            <td>
+                            <select name="">
+                                <option>博士</option>
+                                <option>硕士</option>
+                                <option>本科</option>
+                                <option>大专</option>
+                                <option>中专</option>
+                            </select>
+                            </td>
+                            <td>
+                                <button class="submit">修改</button><button class="submit">添加</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END CONTENT -->
+</div>
+
+<!-- BEGIN FOOTER -->
+<div class="footer">
+    联系我们 | 合作机构
+</div>
+<!-- END FOOTER -->
+
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+
+<script src="assets/plugins/pace.min.js"></script>
+<script src="assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js"
+        type="text/javascript"></script>
+<script src="assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+</body>
+</html>
